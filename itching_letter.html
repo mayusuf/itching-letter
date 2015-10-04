@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--
+Two boxes contain few small box. make a game drag and drop small boxes from one big box to another.
+-->
+<html>
+    <head>
+        <title>Arrange Letter by Dragging</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+            }
+            #main{
+                margin-left: auto;
+                margin-right: auto;
+                width: 800px;
+                height: 500px;
+            }
+            #box1{
+                width: 386px;
+                height: 400px;
+                float: left;
+                margin-top: 50px;
+                border: #8AC007 4px solid;
+                border-radius: 20px;
+            }
+            #box2{
+                width: 386px;
+                height: 400px;
+                float: left;
+                margin-left: 12px;
+                margin-top: 50px;
+                border: #8AC007 4px solid;
+                border-radius: 20px;
+
+            }
+            /*            #small_box1{
+                            width: 50px;
+                            height: 50px;
+                            margin-top: 4px;
+                            margin-left:4px;
+                            background: blueviolet;
+                            border: black 1px solid;
+                            border-radius: 10px;
+                            float: left;
+                        }
+                        #small_box2{
+                            width: 50px;
+                            height: 50px;
+                            margin-top: 4px;
+                            margin-left:4px;
+                            background:#8AC007;
+                            border: black 1px solid;
+                            border-radius: 10px;
+                            float: left;
+                        }
+                        #small_box3{
+                            width: 50px;
+                            height: 50px;
+                            margin-top: 4px;
+                            margin-left:4px;
+                            background: #ff0033;
+                            border: black 1px solid;
+                            border-radius: 10px;
+                            float: left;
+                        }
+                        #small_box4{
+                            width: 50px;
+                            height: 50px;
+                            margin-top: 4px;
+                            margin-left:4px;
+                            background: yellow;
+                            border: black 1px solid;
+                            border-radius: 10px;
+                            float: left;
+                        }*/
+            .small_box{
+                width: 50px;
+                height: 50px;
+                margin-top: 4px;
+                margin-left:4px;
+                background: white;
+                border: black 1px solid;
+                border-radius: 10px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <!--            <div id="box1" ondragover="allowDrop(event)" ondrop="drop(event)">-->
+            <div id="box1">
+                <div id="box3" >
+
+                </div>
+                <p><input type="text" name="name" maxlength="5" placeholder="miximum 5 characters" onblur="setLetter(this)"/></p>
+
+                <div id="small_box1" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box2" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box3" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box4" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box5" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box6" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box7" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box8" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box9" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box10" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box11" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box12" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box13" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box14" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box15" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box16" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box17" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box18" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box19" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box20" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box21" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box22" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box23" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box24" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box25" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box26" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box27" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box28" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box29" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box30" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box31" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box32" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box33" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box34" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box35" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+                <div id="small_box36" class="small_box" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true"></div>
+
+            </div>
+            <div id="box2" ondragover="allowDrop(event)" ondrop="drop(event)" >
+
+            </div>
+        </div>
+
+        <script>
+
+            var random_number = [];
+            var i_d = 0;
+            var droped_ids = [];
+            var gameOk = [];
+
+            function dragStart(event) {
+                event.dataTransfer.setData("Text", event.target.id);
+            }
+
+            function dragging(event) {
+
+            }
+
+            function drop(event) {
+
+                event.preventDefault();
+                var data = event.dataTransfer.getData("Text");
+                //alert(data);
+                var class_name = data;
+                var drop_id = class_name.split("small_box");
+                //alert(drop_id[1]);
+                droped_ids[i_d] = drop_id[1];
+                //document.getElementById('box2').innerHTML = droped_ids;
+                event.target.appendChild(document.getElementById(data));
+                i_d++;
+                //alert(i_d);
+
+                if (i_d == random_number.length) {
+                    //  alert("OK");
+
+                    for (var j = 0; j < random_number.length; j++) {
+                        if (random_number[j] == droped_ids[j])
+                            gameOk[j] = "yes";
+                        else
+                            gameOk[j] = "no";
+                    }
+                    //document.getElementById('box2').innerHTML = gameOk;
+                    if (gameOk.indexOf("no") == -1)
+                        alert("YOU WIN");
+                    else
+                        alert("YOU LOSS");
+                    
+                    window.location = "itching_letter.html";
+                }
+            }
+
+
+            function allowDrop(event) {
+                event.preventDefault();
+            }
+
+            function setLetter($obj) {
+
+                var str = $obj.value.trim();
+                var str_len = str.length;
+                var str_ary = str.split("");
+                //document.getElementById('box3').innerHTML = str_ary;
+
+                //alert(str_len);
+                for (var i = 0; i < str_len; i++) {
+
+                    var gen_num = parseInt((Math.random() * 36) + 1);
+
+                    do {
+                        //alert(random_number.indexOf(gen_num));
+                        var hh = random_number.indexOf(gen_num);
+                        //alert(hh);
+                        if (hh >= 0) {
+                            gen_num = parseInt((Math.random() * 36) + 1);
+                            //alert("yes");
+                            //return;
+                        }
+                        else {
+                            random_number.push(gen_num);
+                            //alert("No");
+                            hh = -2;
+                        }
+
+
+                    }
+                    while (hh > -1);
+
+                    document.getElementById('small_box' + random_number[i]).innerHTML = str_ary[i].toUpperCase();
+
+                }
+                //document.getElementById('box2').innerHTML = random_number;
+
+            }
+        </script>
+    </body>
+</html>
